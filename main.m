@@ -9,7 +9,7 @@ energyImage = energy_image(myImg);
 %imshow(energyImage);
 
 cumMap = cumulative_minimum_energy_map(energyImage,'HORIZONTAL');
-cumMap = [20 2 6 20 48;3 10 11 1 3; 9 8 9 9 10; 3 6 5 2 4];
+cumMap = [9 9 8 7 1 8;6 1 2 3 4 1;4 8 6 6 2 69;10 20 15 11 20 83;3 6 4 5 2 2]
 
 myList = find_optimal_vertical_seam(cumMap);
 myList
