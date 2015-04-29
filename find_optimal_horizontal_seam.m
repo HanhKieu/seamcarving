@@ -1,5 +1,7 @@
-function [ myList ] = find_optimal_vertical_seam( cumMap )
+function [ myList ] = find_optimal_horizontal_seam( cumMap )
 
+
+cumMap = transpose(cumMap);
 num_rows = size(cumMap,1);
 num_columns = size(cumMap,2);
 
@@ -57,6 +59,8 @@ for i=num_rows:-1:2
         j = find(rowLookingAt == minimum); % current column find which column its in
     end
     myList(i - 1) = j; %puts indices into vector,j is current column
+
+myList = transpose(myList);
 end
 
 %UNTITLED3 Summary of this function goes here
