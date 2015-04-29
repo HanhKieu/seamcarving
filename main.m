@@ -9,7 +9,7 @@ energyImage = energy_image(myImg);
 %imshow(energyImage);
 
 cumMap = cumulative_minimum_energy_map(energyImage,'HORIZONTAL');
-cumMap = [8 2 3; 20 43 1; 62 5 10; 2 3 1];
+cumMap = [8 2 3; 20 43 1; 62 5 10; 2 3 1; 4 4 4];
 
 num_rows = size(cumMap,1);
 num_columns = size(cumMap,2);
@@ -36,8 +36,8 @@ for i=num_rows:-1:2
         myArray = [cumMap(i - 1, j - 1), cumMap(i - 1, j), cumMap(i - 1, j + 1)];
     end
    
-    minimum = min(myArray)
-    rowLookingAt = cumMap(i-1,:) %get the row I'm looking at
+    minimum = min(myArray);
+    rowLookingAt = cumMap(i-1,:); %get the row I'm looking at
     j = find(rowLookingAt == minimum); % current column find which column its in
     myList(i - 1) = j; %puts indices into vector,j is current column
 end
