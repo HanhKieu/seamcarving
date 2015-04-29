@@ -9,7 +9,7 @@ energyImage = energy_image(myImg);
 %imshow(energyImage);
 
 cumMap = cumulative_minimum_energy_map(energyImage,'HORIZONTAL');
-cumMap = [8 2 3; 20 43 1; 62 5 10; 2 3 1; 4 8 9];
+cumMap = [8 2 3; 20 43 1; 62 5 10; 2 3 1; 4 4 4];
 
 num_rows = size(cumMap,1);
 num_columns = size(cumMap,2);
@@ -22,9 +22,16 @@ myArray = cumMap(current_row,:); %gets last row
 
 
 minimum = min(myArray); %minimum of bottom row
-current_column = find(myArray == minimum); % current column
-myList(current_row) = current_column; %puts indices into vector
-j = current_column; % initializes j
+rowLookingAt = cumMap(num_rows,:)
+
+if(numel(find(rowLookingAt == minimum)) > 1)
+    tempVector = find(rowLookingAt == minimum)
+    j = tempVector(1)
+else
+    j = find(myArray == minimum); % current column 
+end
+myList(current_row) = j %puts indices into vector
+
 
 
 for i=num_rows:-1:2
