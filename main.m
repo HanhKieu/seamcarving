@@ -25,7 +25,7 @@ plot(myList);
 myList2 = find_optimal_vertical_seam(cumMap);
 imagesc(myImg);
 hold on;
-plot(myList2)
+plot(myList2,1:numel(myList2))
 
 
 %cumMap
