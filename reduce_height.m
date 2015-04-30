@@ -11,7 +11,7 @@ num_rows = size(myImg,1);
 num_cols = size(myImg,2);
 for i=1:num_cols
             reducedColorImage(:,i,:) = myImg([1:(mySeam(i)-1) (mySeam(i)+1):end],i,:);
-            reducedEnergyImage(:,i,:) = energyImage([1:(mySeam(i)-1) (mySeam(i)+1):end],i,:);
+            reducedEnergyImage(:,i) = energyImage([1:(mySeam(i)-1) (mySeam(i)+1):end],i);
 end
 
 imagesc(myImg)

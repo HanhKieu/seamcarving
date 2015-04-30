@@ -1,0 +1,12 @@
+beach.jpg
+
+reduction size by width: 150 pixels.
+Dimensions before:480 x 332
+Dimensions after: 330 x 332
+----------------------------------
+
+
+Kanye.jpg
+
+Dimensions before: 396 x 594
+Dimensions after: 
