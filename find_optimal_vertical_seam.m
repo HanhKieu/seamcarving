@@ -15,12 +15,15 @@ rowLookingAt = cumMap(num_rows,:);
 
 if(numel(find(rowLookingAt == minimum)) > 1)
     tempVector = find(rowLookingAt == minimum);
-    j = tempVector(1);
+    j = tempVector(2);
 else
     j = find(myArray == minimum); % current column 
 end
 
 myList(current_row) = j; %puts indices into vector
+
+
+
 
 
 
@@ -39,25 +42,28 @@ for i=num_rows:-1:2
  
     rowLookingAt = cumMap(i-1,:); %get the row I'm looking at
     
-    if(numel(find(rowLookingAt)) > 1)
-        tempVector = find(rowLookingAt == minimum);
-        if numel(find(tempVector == (j - 1))) == 1
-            column = find(tempVector == (j - 1));
-            j = tempVector(column);
-        elseif numel(find(tempVector == j)) == 1
-            column = find(tempVector == j);
-            j = tempVector(column);
-        elseif numel(find(tempVector == j + 1)) == 1
-            column = find(tempVector == ( j + 1));
-            j = tempVector(column);
-        else
-            j = tempVector(1);
+    if(numel(find(rowLookingAt == minimum)) > 1)
+        myVector = find(rowLookingAt == minimum);
+        
+        for h=1:1:numel(myVector)
+            if myVector(h) == (j - 1)
+                j = myVector(h);
+                break;
+            elseif myVector(h) == (j)
+                j = myVector(h);
+                break;
+            elseif myVector(h) == (j + 1)
+                j = myVector(h);
+                break;
+            end
+            
         end
+        
     else
         j = find(rowLookingAt == minimum); % current column find which column its in
     end
+    
     myList(i - 1) = j; %puts indices into vector,j is current column
-end
 
 %UNTITLED3 Summary of this function goes here
 %   Detailed explanation goes here
