@@ -22,13 +22,9 @@ num_cols = size(myImg,2);
 
 
 
-newMatrix = reduce_width(myImg,energyImage);
+[reducedColorImage,reducedEnergyImage] = reduce_height(myImg,energyImage);
 
 
-for i=1:1:50
-    newMatrix = reduce_width(newMatrix,energyImage);
-    
-end
 
 % 
 % myString = 'HORIZONTAL';
