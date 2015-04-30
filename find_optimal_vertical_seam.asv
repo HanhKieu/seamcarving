@@ -15,7 +15,7 @@ rowLookingAt = cumMap(num_rows,:);
 
 if(numel(find(rowLookingAt == minimum)) > 1)
     tempVector = find(rowLookingAt == minimum);
-    j = tempVector(1);
+    j = tempVector(2);
 else
     j = find(myArray == minimum); % current column 
 end
@@ -46,14 +46,14 @@ for i=num_rows:-1:2
         myVector = find(rowLookingAt == minimum);
         
         for h=1:1:numel(myVector)
-            if myVector(h) == (j - 1)
+            if myVector(h) == (j)
                 j = myVector(h);
                 break;
-            elseif myVector(h) == (j)
-                j = myVector(i);
+            elseif myVector(h) == (j - 1)
+                j = myVector(h);
                 break;
-            elseif myVector(i) == (j + 1)
-                j = myVector(i);
+            elseif myVector(h) == (j + 1)
+                j = myVector(h);
                 break;
             end
             

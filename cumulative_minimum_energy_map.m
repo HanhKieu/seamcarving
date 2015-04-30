@@ -18,13 +18,13 @@ cumMap(1,:) = energyImage(1, :);
 for i=2:1:num_rows
     for j=1:1:num_columns
         if j == 1
-            myArray = [energyImage(i - 1, j), energyImage(i - 1, j + 1)];
+            myArray = [cumMap(i - 1, j), cumMap(i - 1, j + 1)];
                       %top and top right
         elseif j == num_columns
-            myArray = [energyImage(i - 1, j -1), energyImage(i - 1, j)];
+            myArray = [cumMap(i - 1, j -1), cumMap(i - 1, j)];
                       %top left and top
         else
-            myArray = [energyImage(i - 1, j - 1), energyImage(i - 1, j), energyImage(i - 1, j + 1)];
+            myArray = [cumMap(i - 1, j - 1), cumMap(i - 1, j), cumMap(i - 1, j + 1)];
         end
         cumMap(i,j) = energyImage(i,j) + min(myArray);
     end
