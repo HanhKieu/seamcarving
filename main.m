@@ -1,4 +1,4 @@
- imgName = 'input.jpg';
+ imgName = 'inputSeamCarvingPrague.jpg';
  myImg = imread(imgName);
 
 
@@ -7,14 +7,14 @@
 energyImage = energy_image(myImg);
 %energyImage = [1 2 3; 4 5 6;7 8 9]
 %energyImage = randi(10,5)
-%imshow(energyImage);
+%imagesc(energyImage);
 
 
 
-% myString = 'VERTICAL';
-% cumMap = cumulative_minimum_energy_map(energyImage, myString);
-% mySeam = find_optimal_vertical_seam(cumMap);
-%display_seam(myImg,mySeam,myString)
+myString = 'VERTICAL';
+cumMap = cumulative_minimum_energy_map(energyImage, myString);
+mySeam = find_optimal_vertical_seam(cumMap);
+display_seam(myImg,mySeam,myString)
 
 
 num_rows = size(myImg,1);
@@ -22,7 +22,7 @@ num_cols = size(myImg,2);
 
 
 
-[reducedColorImage,reducedEnergyImage] = reduce_height(myImg,energyImage);
+%[reducedColorImage,reducedEnergyImage] = reduce_height(myImg,energyImage);
 
 
 

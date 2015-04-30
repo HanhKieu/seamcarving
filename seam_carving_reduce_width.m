@@ -1,26 +1,29 @@
 %a
-%myImg = imread('inputSeamCarvingPrague.jpg');
+myImg = imread('inputSeamCarvingPrague.jpg');
 
 %myImg = imread('inputSeamCarvingMall.jpg');
 
 %MY PERSONAL IMAGES
 %-----------------
 
-%1
-%myImg = imread('beach.jpg');
-%myImg = imresize(myImg,[330 332]);
-%imshow(myImg)
 
 %2
-myImg = imread('Kanye.jpg');
+% myImg = imread('kanye.jpg');
+% myImg = imresize(myImg,[453, 400]);
+% imshow(myImg)
+
+
+%3
+%myImg = imread('apples.jpg');
+
 
 
 %b
 energyImage = energy_image(myImg);
 [reducedColorImage,reducedEnergyImage] = reduce_width(myImg,energyImage);
 
-
-for i=1:1:199
+%c
+for i=1:1:99
     [reducedColorImage,reducedEnergyImage] = reduce_width(reducedColorImage,reducedEnergyImage);
 end
 

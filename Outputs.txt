@@ -1,12 +1,21 @@
-beach.jpg
+Apples.jpeg
 
 reduction size by width: 150 pixels.
-Dimensions before:480 x 332
-Dimensions after: 330 x 332
+Dimensions before:500 x 375
+Dimensions after: 350 x 375
 ----------------------------------
 
 
-Kanye.jpg
+kanye.jpg
 
-Dimensions before: 396 x 594
-Dimensions after: 
+Dimensions before: 600 x 453
+Dimensions after: 400 x 453
+
+Looks good af
+----------------------------------
+
+Picnic.jpg
+Dimensions before: 600 x 402
+Dimensions after: 600 x 252
+
+Turned out great
